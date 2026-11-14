@@ -54,3 +54,93 @@ a {
   margin: 0 auto;
   padding: 24px;
 }
+
+.mensaje {
+  text-align: center;
+  padding: 40px 0;
+  color: #555;
+}
+
+.mensaje-error {
+  color: #c0392b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.card-body h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.card-category {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.card-price {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.badge-verde {
+  background: #d9f2e1;
+  color: #1e7d3a;
+}
+
+.badge-amarillo {
+  background: #fff1c9;
+  color: #8a6500;
+}
+
+.badge-rojo {
+  background: #fbdada;
+  color: #b02a2a;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #4f6df5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  background: #3b57d8;
+}
