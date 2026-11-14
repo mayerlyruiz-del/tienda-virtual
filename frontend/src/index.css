@@ -273,3 +273,81 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.tabla th,
+.tabla td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7ee;
+}
+
+.tabla th {
+  background: #eef0f6;
+  font-size: 0.9rem;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-mini {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #4f6df5;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-mini:disabled {
+  background: #b9bfd3;
+  cursor: not-allowed;
+}
+
+.btn-peligro {
+  background: #c0392b;
+}
+
+.resumen {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.resumen-total {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.resumen-nota {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  max-width: 420px;
+  text-align: right;
+}
+
+.resumen-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

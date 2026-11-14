@@ -1,9 +1,26 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { CartContext } from './CartContext';
 import type { CartItem, Product } from '../types';
 
+const STORAGE_KEY = 'tienda-carrito';
+
+// Lee el carrito guardado en el navegador (si existe)
+function loadCart(): CartItem[] {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? (JSON.parse(saved) as CartItem[]) : [];
+  } catch {
+    return [];
+  }
+}
+
 export default function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<CartItem[]>(loadCart);
+
+  // Cada vez que el carrito cambia, lo guardamos en el navegador
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  }, [items]);
 
   function addItem(product: Product, quantity: number): string | null {
     if (quantity < 1) return 'La cantidad debe ser al menos 1.';
