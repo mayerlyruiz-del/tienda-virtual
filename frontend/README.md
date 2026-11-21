@@ -1,7 +1,7 @@
 # Tienda virtual - Frontend (Entrega 1)
 
 Proyecto final de **Desarrollo de Aplicaciones Web**.
-Autor: [Tu nombre]
+Autor: Mayerly Ruiz
 
 ## Descripción
 
