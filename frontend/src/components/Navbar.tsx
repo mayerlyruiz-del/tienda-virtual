@@ -14,6 +14,7 @@ export default function Navbar() {
         <NavLink to="/carrito">Carrito ({totalItems})</NavLink>
         {user && <NavLink to="/pedidos">Mis pedidos</NavLink>}
         {user?.role === 'admin' && <NavLink to="/admin/pedidos">Administración</NavLink>}
+        {user?.role === 'admin' && <NavLink to="/admin/productos">Productos</NavLink>}
         {user ? (
           <>
             <span className="navbar-user">{user.name}</span>

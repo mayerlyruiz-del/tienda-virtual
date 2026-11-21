@@ -527,3 +527,35 @@ a {
   gap: 8px;
   margin-top: 12px;
 }
+
+.barra-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.formulario-ancho {
+  max-width: none;
+  margin-bottom: 20px;
+}
+
+.formulario-ancho h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.formulario textarea,
+.formulario select {
+  padding: 8px 10px;
+  border: 1px solid #c8cbd6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.formulario textarea.invalido,
+.formulario select.invalido {
+  border-color: #c0392b;
+}

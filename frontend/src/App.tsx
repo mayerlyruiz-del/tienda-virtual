@@ -8,6 +8,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
 import LoginPage from './pages/LoginPage';
+import AdminProductsPage from './pages/AdminProductsPage';
 
 export default function App() {
   return (
@@ -39,6 +40,14 @@ export default function App() {
             element={
               <ProtectedRoute role="admin">
                 <AdminOrdersPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/productos"
+            element={
+              <ProtectedRoute role="admin">
+                <AdminProductsPage />
               </ProtectedRoute>
             }
           />

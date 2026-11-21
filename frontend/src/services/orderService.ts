@@ -1,5 +1,5 @@
 import { orders as initialOrders } from '../data/orders';
-import { products } from '../data/products';
+import { readProducts } from './productService';
 import type { CartItem, Order, OrderItem, OrderStatus } from '../types';
 
 const STORAGE_KEY = 'tienda-pedidos';
@@ -56,6 +56,7 @@ export function createOrder(
   shipping: ShippingData,
 ): Promise<Order> {
   const list = loadOrders();
+  const products = readProducts();
   const items: OrderItem[] = [];
   let total = 0;
   let nextItemId = Math.max(0, ...list.flatMap((o) => o.items.map((i) => i.id))) + 1;
