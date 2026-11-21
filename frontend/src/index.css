@@ -513,3 +513,17 @@ a {
   font-weight: bold;
   text-align: right;
 }
+
+.pedido-cliente {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pedido-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
