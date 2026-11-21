@@ -351,3 +351,66 @@ a {
   flex-wrap: wrap;
   gap: 10px;
 }
+
+.navbar-user {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  color: #c9d1ea;
+}
+
+.navbar-salir {
+  padding: 6px 12px;
+  border: 1px solid #c9d1ea;
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.navbar-salir:hover {
+  background: #33415f;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.95rem;
+}
+
+.formulario input {
+  padding: 8px 10px;
+  border: 1px solid #c8cbd6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.formulario .alerta {
+  margin: 0;
+}
+
+.cuentas {
+  margin-top: 24px;
+  max-width: 520px;
+}
+
+.cuentas ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.cuentas li {
+  margin-bottom: 8px;
+}
