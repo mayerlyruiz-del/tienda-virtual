@@ -466,3 +466,50 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+.badge-azul {
+  background: #dbe6ff;
+  color: #1f3fa8;
+}
+
+.pedido {
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.pedido-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.pedido-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.pedido-items li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e7ee;
+}
+
+.pedido-envio {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pedido-total {
+  margin: 0;
+  font-weight: bold;
+  text-align: right;
+}
