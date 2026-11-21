@@ -414,3 +414,55 @@ a {
 .cuentas li {
   margin-bottom: 8px;
 }
+
+.checkout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.checkout .formulario {
+  max-width: none;
+}
+
+.formulario input.invalido {
+  border-color: #c0392b;
+}
+
+.campo-error {
+  color: #b02a2a;
+  font-size: 0.85rem;
+}
+
+.resumen-pedido {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.resumen-pedido h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.resumen-pedido ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.resumen-pedido li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7ee;
+}
+
+@media (max-width: 700px) {
+  .checkout {
+    grid-template-columns: 1fr;
+  }
+}
