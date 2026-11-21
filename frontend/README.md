@@ -1,75 +1,89 @@
-# React + TypeScript + Vite
+# Tienda virtual - Frontend (Entrega 1)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto final de **Desarrollo de Aplicaciones Web**.
+Autor: [Tu nombre]
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Tienda web sencilla para explorar productos, administrar un carrito y registrar
+pedidos. No incluye pasarela de pagos. En esta primera entrega solo existe el
+Frontend; los datos son simulados y se guardan en el navegador.
 
-## React Compiler
+## Tecnologías elegidas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Capa | Tecnología | Estado |
+|---|---|---|
+| Frontend | React + Vite + TypeScript | Entrega 1 |
+| Backend | NestJS | Entrega 2 |
+| Base de datos | PostgreSQL | Entrega 2 |
 
-## Expanding the ESLint configuration
+**Justificación:** NestJS y React usan TypeScript, lo que permite usar el mismo
+lenguaje en las dos capas y compartir la forma de los datos (producto, pedido,
+usuario).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Requisitos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 18 o superior
+- npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Cómo ejecutar el proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Luego abrir http://localhost:5173/ en el navegador.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Perfiles de usuario
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Perfil | Correo de prueba | Qué puede hacer |
+|---|---|---|
+| Visitante | (sin sesión) | Ver catálogo, detalle y carrito |
+| Cliente | cliente1@tienda.test, cliente2@tienda.test | Comprar, ver sus pedidos |
+| Administrador | admin@tienda.test | Gestionar productos y pedidos |
 
+El acceso es simulado y solo pide el correo. No hay contraseñas reales.
+
+## Funcionalidades
+
+- Catálogo con imágenes de referencia, categorías, precios y disponibilidad
+- Búsqueda por nombre y filtros por categoría, rango de precio y disponibilidad
+- Detalle del producto, con validación de la cantidad frente al stock
+- Carrito con cambio de cantidades y total (se conserva al recargar)
+- Formulario de datos de entrega con validaciones y resumen del pedido
+- Historial de pedidos del cliente
+- Vista administrativa de pedidos, con cambio de estado
+- Administración de productos: crear, editar y eliminar
+- Rutas protegidas según el perfil
+- Diseño adaptable a escritorio y celular
+- Estados de interfaz: cargando, error, sin resultados y confirmaciones
+
+## Datos simulados y supuestos
+
+- Los datos de prueba están en `src/data` (4 categorías, 12 productos,
+  3 usuarios y 4 pedidos).
+- Algunos productos tienen stock 0 o pocas unidades para mostrar esos estados.
+- Las imágenes son de relleno (placehold.co) y requieren internet.
+- Los cambios (carrito, sesión, pedidos y productos) se guardan en el
+  `localStorage` del navegador.
+- Los servicios de `src/services` simulan una API con una pequeña demora. En la
+  Entrega 2 solo se reemplazan por llamadas HTTP al Backend.
+- El total del pedido se recalcula en el servicio con los precios actuales y no
+  con los datos del carrito.
+- Un pedido solo cambia de estado así: pendiente → enviado o cancelado;
+  enviado → entregado o cancelado. Entregado y cancelado son finales.
+
+## Estructura del código
+
+```
+src/
+  components/   Piezas reutilizables (barra, tarjeta, etiqueta de estado)
+  context/      Estado compartido (carrito y sesión)
+  data/         Datos de prueba
+  pages/        Pantallas completas
+  services/     Acceso a los datos (simulado)
+  types/        Tipos de TypeScript del modelo de datos
+  utils/        Funciones de ayuda (formatos)
 ```
